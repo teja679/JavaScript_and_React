@@ -9,7 +9,8 @@ function Navbar() {
       setAlignment(newAlignment);
     };
   return (
-
+    <div className='navbar'>
+    <h1>LFC</h1>
     <ToggleButtonGroup
       fullWidth
       color="primary"
@@ -17,11 +18,12 @@ function Navbar() {
       exclusive
       onChange={handleChange}
       aria-label="Platform"
-    >
+      >
       <ToggleButton value="home">Home</ToggleButton>
       <ToggleButton value="activities">Activities</ToggleButton>
       <ToggleButton value="contact">Contact</ToggleButton>
     </ToggleButtonGroup>
+      </div>
     )
 }
 
