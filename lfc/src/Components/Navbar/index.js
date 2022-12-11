@@ -1,30 +1,27 @@
 import * as React from 'react';
-import ToggleButton from '@mui/material/ToggleButton';
-import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+import Box from '@mui/material/Box';
+import BottomNavigation from '@mui/material/BottomNavigation';
+import BottomNavigationAction from '@mui/material/BottomNavigationAction';
+import RestoreIcon from '@mui/icons-material/Restore';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 
-function Navbar() {
-    const [alignment, setAlignment] = React.useState('web');
+export default function Navbar() {
+  const [value, setValue] = React.useState(0);
 
-    const handleChange = (event, newAlignment) => {
-      setAlignment(newAlignment);
-    };
   return (
-    <div className='navbar'>
-    <h1>LFC</h1>
-    <ToggleButtonGroup
-      fullWidth
-      color="primary"
-      value={alignment}
-      exclusive
-      onChange={handleChange}
-      aria-label="Platform"
+    <Box sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
+      <BottomNavigation
+        showLabels
+        value={value}
+        onChange={(event, newValue) => {
+          setValue(newValue);
+        }}
       >
-      <ToggleButton value="home">Home</ToggleButton>
-      <ToggleButton value="activities">Activities</ToggleButton>
-      <ToggleButton value="contact">Contact</ToggleButton>
-    </ToggleButtonGroup>
-      </div>
-    )
+        <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
+        <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
+        <BottomNavigationAction label="Nearby" icon={<LocationOnIcon />} />
+      </BottomNavigation>
+    </Box>
+  );
 }
-
-export default Navbar
