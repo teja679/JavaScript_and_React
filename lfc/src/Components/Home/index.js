@@ -161,7 +161,7 @@ function Home() {
       //   alignItems: "center",
       // }}
     >
-      <img width="390" height="800" src={img21} alt="data" />
+      <img width="100%" height="100%" src={img16} alt="data" />
     </div>
   );
 }
