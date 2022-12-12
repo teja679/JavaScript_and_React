@@ -10,7 +10,7 @@ import Home from './Components/Home'
 import NavbarComp from './NavbarComp';
 import Navbar from './Components/Navbar';
 import Songs from './Components/Songs';
-import Bible from './Components/Bible';
+import BibleComponent from './Components/Bible';
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/activities' element={<Activities />} />
-        <Route path='/bible' element={<Bible />} />
+        <Route path='/bible' element={<BibleComponent />} />
         <Route path='/songs' element={<Songs />} />
         <Route path='/about' element={<About />} />
       </Routes>
